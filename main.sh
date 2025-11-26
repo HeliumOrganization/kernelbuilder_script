@@ -181,18 +181,6 @@ dependencies() {
             err "Invaild, exiting"
             return 1
             ;;
-
-    echo -e "\n[INFO] Cloning clang-r383902b...\n"
-    mkdir -p "${HOME}/toolchains/clang-r383902b" && cd "${HOME}/toolchains/clang-r383902b"
-    curl -LO "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/0e9e7035bf8ad42437c6156e5950eab13655b26c/clang-r383902b.tar.gz"
-    tar -xf clang-r383902b.tar.gz && rm clang-r383902b.tar.gz
-    cd "$DIRPATH"
-    
-    echo -e "\n[INFO] Cloning ARM GNU Toolchain\n"
-    mkdir -p "${HOME}/toolchains/gcc" && cd "${HOME}/toolchains/gcc"
-    curl -LO "https://developer.arm.com/-/media/Files/downloads/gnu/14.2.rel1/binrel/arm-gnu-toolchain-14.2.rel1-x86_64-aarch64-none-linux-gnu.tar.xz"
-    tar -xf arm-gnu-toolchain-14.2.rel1-x86_64-aarch64-none-linux-gnu.tar.xz
-    cd "$DIRPATH"
     esac
 }
 
