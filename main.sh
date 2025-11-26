@@ -12,6 +12,9 @@ export KBUILD_BUILD_USER="@nguyencaoantuong"
 mkdir -p "${HOME}/toolchains" "${KERNEL_ROOT}/out"
 cd "$DIRPATH"
 
+COMMIT="$(git rev-parse --short HEAD)"
+BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+
 # Check if user is running on an actual Linux environment
 if uname -a | grep -i Linux ; then
     info "You have Linux environment :)"
@@ -215,9 +218,6 @@ export BUILD_OPTIONS=(
 
     info "BUILD FINISHED..!"
     info "OUTPUT FILE IN: build folder!"
-
-COMMIT="$(git rev-parse --short HEAD)"
-BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 clear
 }
 
@@ -265,10 +265,11 @@ fi
 
 # Main functions
 PS3='Please select options to continue : '
-select opt in 'Clone Latest helium kernel source' 'Add KernelSU' 'Hook' 'Install dependencies' 'Clone toolchains' 'Exit'
+select opt in 'Pull latest commit' 'Clone latest kernel source' 'Add KernelSU' 'Hook' 'Install dependencies' 'Clone toolchains' 'Exit'
 do
     case "$opt" in
-        'Clone latest helium kernel source' )   helium ;;
+        'Clone latest kernel source' )   helium ;;
+        'Pull latest commit' )         git pull origin main ::
         'Add KernelSU' )   ksu ;;
         'Hook' )   hook ;;
         'Install dependencies' )   dependencies ;;
