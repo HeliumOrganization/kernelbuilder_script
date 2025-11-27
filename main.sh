@@ -188,7 +188,7 @@ dependencies() {
 }
 
 build() {
-cd "$DIRPATH/ks"
+cd "${KERNEL_ROOT}"
 
 export PATH="${HOME}/toolchains/clang-r383902b/bin:${PATH}"
 export LD_LIBRARY_PATH="${HOME}/toolchains/clang-r383902b/lib:${HOME}/toolchains/clang-r383902b/lib64:${LD_LIBRARY_PATH}"
