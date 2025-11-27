@@ -9,8 +9,7 @@
 ```
 git clone https://github.com/HeliumKA/kernelbuilder_script kernelbuilder
 cd kernelbuilder
-chmod +x main.sh
-./main.sh
+bash main.sh
 ```
 
 ### Upcoming features:
