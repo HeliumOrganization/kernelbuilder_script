@@ -269,7 +269,7 @@ fi
 
 # Main functions
 PS3='Please select options to continue : '
-select opt in 'Pull latest commit' 'Clone latest kernel source' 'Add KernelSU' 'Hook' 'Install dependencies' 'Clone toolchains' 'Exit'
+select opt in 'Pull latest commit' 'Clone latest kernel source' 'Add KernelSU' 'Hook' 'Install dependencies' 'Clone toolchains' 'Build' 'Exit'
 do
     case "$opt" in
         'Clone latest kernel source' )   helium ;;
